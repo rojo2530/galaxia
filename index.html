@@ -8,9 +8,12 @@
 	<div class="container">
   		<div id="app" class="row">
     		<div class="col-md-8 col-sm-offset-2">
-      			<input id="input-search" type="text" class="form-control" placeholder='Search...'>{{persona.nombre}}
-      			<div id="list-countries" v-if="countries && countries.length">
-        			<div class="panel panel-default" v-for="country of countries">
+      			<input id="input-search" type="text" class="form-control" placeholder='Search...'>
+      			<div id="list-films">
+      				<ul v-for="film in films">
+      					<li>{{film.title}}</li>	
+        			</ul>
+        		<!--	<div class="panel panel-default" v-for="country of countries">
           				<div class="panel-heading">
             				<img v-bind:src="country.flag" alt="" width="30px">
             				<span>{{persona.nombre}}</span>
@@ -24,16 +27,13 @@
               					<div class="col-md-6">Currency: <strong>{{country.currencies[0].name}} ({{country.currencies[0].symbol}})</strong></div>
               					<div class="col-md-6">Population: <strong >{{country.population}}</strong></div>
             				</div> 
-          				</div>
-        			</div>
-      			</div>
-      			<div class="text-center" v-else>
-        			No results!
-      			</div>
-    		</div>
-  		</div>  
-	</div>
-
+          				</div> -->
+        		</div>
+      		</div>
+      	
+    	</div>
+  	</div>  
+	
 
 
 
