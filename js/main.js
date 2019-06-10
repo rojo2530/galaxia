@@ -12,6 +12,9 @@ const vm = new Vue({
             axios.get(url)
                 .then((response) => {
                     this.films = response.data.results;
+                })
+                .catch(function(error) {
+                    console.log(error);
                 });
         }
     },
@@ -20,6 +23,12 @@ const vm = new Vue({
         this.loadFilms();
     },
 
+    computed: {
+     filmsFilter: function() {
+       var textSearch = this.textSearch;
+       return this.films.filter(film => film.title.toLowerCase().indexOf(textSearch.toLowerCase()) !== -1);
+     }
+  },
 
 
 });
