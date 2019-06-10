@@ -1,51 +1,94 @@
+
 <!DOCTYPE html>
-<html>
-<head>
-	<title>Star Wars Films</title>
-	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-</head>
-<body>
-	<div class="container">
-  		<div id="app" class="row">
-    		<div class="col-md-8 col-sm-offset-2">
-      			<input id="input-search" type="text" class="form-control" v-model="textSearch" placeholder='Search...'>
-      			<div id="list-films" v-if="filmsFilter && filmsFilter.length">
-      				<ul v-for="film in filmsFilter">
-      					<li>{{film.title}}</li>	
-        			</ul>
-        		<!--	<div class="panel panel-default" v-for="country of countries">
-          				<div class="panel-heading">
-            				<img v-bind:src="country.flag" alt="" width="30px">
-            				<span>{{persona.nombre}}</span>
-          				</div>
-          				<div class="panel-body">
-            				<div class="row">
-              					<div class="col-md-6">Capital: <strong>{{country.capital}}</strong></div>
-              					<div class="col-md-6">Region: <strong>{{country.region}}</strong></div>
-            				</div> 
-            				<div class="row">
-              					<div class="col-md-6">Currency: <strong>{{country.currencies[0].name}} ({{country.currencies[0].symbol}})</strong></div>
-              					<div class="col-md-6">Population: <strong >{{country.population}}</strong></div>
-            				</div> 
-          				</div> -->
-        		</div>
-      		</div>
-      	
-    	</div>
-  	</div>  
-	
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
+    <title>Star Wars Films</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
+ <!--  <link href="css/style.css" rel="stylesheet"> -->
 
+  </head>
+  <body>
+  	<div id="app">
+    <div class="container-fluid">
+	<div class="row">
+		<h1>Stars Wars Films</h1>
+	</div>
+	<div class="row">
+		<div class="col-md-4">
+			<h2>
+				Historial de Visitas
+			</h2>
+			<p>
+				Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
+			</p>
+			<p>
+				<a class="btn" href="#">View details »</a>
+			</p>
+		</div>
+		<div class="col-md-8">
+			<ul class="nav">
+				<li class="nav-item">
+					<a class="nav-link active" href="#">Home</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link">Films:</a>
+				</li>
+				<li class="nav-item">
+					<input id="input-search" type="text" class="form-control" v-model="textSearch" placeholder='Search Film...'>
+				</li>
+				
+			</ul>
+			<table class="table table-striped">
+				<thead class="thead-dark">
+					<tr>
+						<th>
+							#
+						</th>
+						<th>
+							Title
+						</th>
+						<th>
+							Episode number
+						</th>
+						<th>
+							Release Date
+						</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr v-for="film in filmsFilter">
+						<td>
+							0
+						</td>
+						<td>
+							{{film.title}}
+						</td>
+						<td>
+							{{film.episode_id}}
+						</td>
+						<td>
+							{{film.release_date}}
+						</td>
+		
+				</tbody>
+			</table> 
+		</div>
+	</div>
+</div>
+</div>
 
-	
-	<script src="https://unpkg.com/vue@2.6.10/dist/vue.js"></script>
+    
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/vue@2.6.10/dist/vue.js"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/scrollup/2.4.1/jquery.scrollUp.min.js"></script>
-
     <script src="js/main.js"></script>
-</body>
+
+  </body>
 </html>
