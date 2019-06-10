@@ -1,16 +1,16 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Peliculas de Star Wars</title>
+	<title>Star Wars Films</title>
 	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 </head>
 <body>
 	<div class="container">
   		<div id="app" class="row">
     		<div class="col-md-8 col-sm-offset-2">
-      			<input id="input-search" type="text" class="form-control" placeholder='Search...'>
-      			<div id="list-films">
-      				<ul v-for="film in films">
+      			<input id="input-search" type="text" class="form-control" v-model="textSearch" placeholder='Search...'>
+      			<div id="list-films" v-if="filmsFilter && filmsFilter.length">
+      				<ul v-for="film in filmsFilter">
       					<li>{{film.title}}</li>	
         			</ul>
         		<!--	<div class="panel panel-default" v-for="country of countries">
