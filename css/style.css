@@ -1,0 +1,22 @@
+html {
+    font-size: 1rem,
+    
+}
+
+body {
+    background-image: url('../img/fondo-starwars.png');
+    color:white;
+}
+
+table {
+    /*color:rgb(44, 62, 80); */
+    background-color: #191818
+}
+
+img {
+    width: 50%
+}
+
+ul>li {
+    font-size: 2rem
+}
