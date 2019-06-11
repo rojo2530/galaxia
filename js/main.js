@@ -2,7 +2,7 @@ const Home = {
     template: `
         <div>
             <h2> May the Force be with you </h2>
-            <img class="centrado" src="img/logo.png" alt="Solvetic">
+            <img src="img/logo.png" alt="Solvetic">
         </div>
     `
 };
@@ -36,9 +36,10 @@ const films = {
     computed: {
          filmsFilter: function() {
                let textSearch = this.textSearch;
+               
                return this.films.filter(
-                film => film.title.toLowerCase().indexOf(textSearch.toLowerCase()) !== -1
-            );
+                    film => film.title.toLowerCase().indexOf(textSearch.toLowerCase()) !== -1
+               );
          }
       },
     template: `
@@ -85,7 +86,6 @@ const Film = {
             loading: true,
             error: false,
             film: null
-            
         }
     },
     created: function(){
@@ -105,7 +105,6 @@ const Film = {
                 '7': 7
             }
             ide = episodeIdRelation[ide];
-            console.log(ide);
             axios.get('https://swapi.co/api/films/' + ide )
             .then(function (response) {
                 that.loading = false;
@@ -141,7 +140,7 @@ const Film = {
 };
 
 const routes = [
-    {path: '/', component: Home},
+      {path: '/', component: Home},
       {path: '/home', component: Home},
       {path: '/films', component: films},
       {path: '/films/:id', component: Film}
