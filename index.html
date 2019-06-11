@@ -1,94 +1,30 @@
-
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+<html>
+<head>
+	<meta charset="utf-8">
+	<title> Star Wars Films </title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
 
-    <title>Star Wars Films</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
- <!--  <link href="css/style.css" rel="stylesheet"> -->
-
-  </head>
-  <body>
-  	<div id="app">
-    <div class="container-fluid">
-	<div class="row">
-		<h1>Stars Wars Films</h1>
+	<div id="app" class="container">
+		<!----<h1> Star Wars </h1> -->
+		<ul class="nav nav-pills">
+			<li role="presentation">
+				<router-link to="/home">Home</router-link>
+			</li>
+			<li role="presentation">
+				<router-link to="/films">Films</router-link>
+			</li>
+		</ul>
+		<router-view></router-view>
 	</div>
-	<div class="row">
-		<div class="col-md-4">
-			<h2>
-				Historial de Visitas
-			</h2>
-			<p>
-				Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
-			</p>
-			<p>
-				<a class="btn" href="#">View details »</a>
-			</p>
-		</div>
-		<div class="col-md-8">
-			<ul class="nav">
-				<li class="nav-item">
-					<a class="nav-link active" href="#">Home</a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link">Films:</a>
-				</li>
-				<li class="nav-item">
-					<input id="input-search" type="text" class="form-control" v-model="textSearch" placeholder='Search Film...'>
-				</li>
-				
-			</ul>
-			<table class="table table-striped">
-				<thead class="thead-dark">
-					<tr>
-						<th>
-							#
-						</th>
-						<th>
-							Title
-						</th>
-						<th>
-							Episode number
-						</th>
-						<th>
-							Release Date
-						</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr v-for="film in filmsFilter">
-						<td>
-							0
-						</td>
-						<td>
-							{{film.title}}
-						</td>
-						<td>
-							{{film.episode_id}}
-						</td>
-						<td>
-							{{film.release_date}}
-						</td>
-		
-				</tbody>
-			</table> 
-		</div>
-	</div>
-</div>
-</div>
 
-    
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-    <script src="https://unpkg.com/vue@2.6.10/dist/vue.js"></script>
-    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    <script src="js/main.js"></script>
-
-  </body>
+	<script src="https://unpkg.com/vue/dist/vue.js"></script>
+	<script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
+	<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+	<script src="js/main.js"></script>
+	
+</body>
 </html>
